@@ -11,6 +11,7 @@ class Location: CustomStringConvertible {
     let name: String
     let monster: Monster
     var description: String
+    var isAstridHere: Bool = false
     
     init(name: String, monster: Monster) {
         self.name = name

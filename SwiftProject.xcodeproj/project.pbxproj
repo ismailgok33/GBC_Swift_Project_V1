@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		EC4861A027D07FDE0076D4E4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC48619F27D07FDE0076D4E4 /* main.swift */; };
+		EC4861A727D080220076D4E4 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4861A627D080220076D4E4 /* Map.swift */; };
+		EC4861AB27D080750076D4E4 /* Road.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4861AA27D080750076D4E4 /* Road.swift */; };
+		EC4861AD27D080870076D4E4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4861AC27D080870076D4E4 /* Location.swift */; };
+		EC4861AF27D081D40076D4E4 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4861AE27D081D40076D4E4 /* Monster.swift */; };
+		EC4861B127D082860076D4E4 /* GameCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4861B027D082860076D4E4 /* GameCharacter.swift */; };
+		EC4861B327D085970076D4E4 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4861B227D085970076D4E4 /* Hero.swift */; };
+		EC4861B827D0872B0076D4E4 /* Fight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4861B727D0872B0076D4E4 /* Fight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +32,13 @@
 /* Begin PBXFileReference section */
 		EC48619C27D07FDE0076D4E4 /* SwiftProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC48619F27D07FDE0076D4E4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EC4861A627D080220076D4E4 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		EC4861AA27D080750076D4E4 /* Road.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Road.swift; sourceTree = "<group>"; };
+		EC4861AC27D080870076D4E4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		EC4861AE27D081D40076D4E4 /* Monster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		EC4861B027D082860076D4E4 /* GameCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCharacter.swift; sourceTree = "<group>"; };
+		EC4861B227D085970076D4E4 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		EC4861B727D0872B0076D4E4 /* Fight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +72,31 @@
 			isa = PBXGroup;
 			children = (
 				EC48619F27D07FDE0076D4E4 /* main.swift */,
+				EC4861B627D086E40076D4E4 /* MapElements */,
+				EC4861B527D086C70076D4E4 /* GameCharacters */,
+				EC4861B727D0872B0076D4E4 /* Fight.swift */,
 			);
 			path = SwiftProject;
+			sourceTree = "<group>";
+		};
+		EC4861B527D086C70076D4E4 /* GameCharacters */ = {
+			isa = PBXGroup;
+			children = (
+				EC4861AE27D081D40076D4E4 /* Monster.swift */,
+				EC4861B027D082860076D4E4 /* GameCharacter.swift */,
+				EC4861B227D085970076D4E4 /* Hero.swift */,
+			);
+			path = GameCharacters;
+			sourceTree = "<group>";
+		};
+		EC4861B627D086E40076D4E4 /* MapElements */ = {
+			isa = PBXGroup;
+			children = (
+				EC4861A627D080220076D4E4 /* Map.swift */,
+				EC4861AC27D080870076D4E4 /* Location.swift */,
+				EC4861AA27D080750076D4E4 /* Road.swift */,
+			);
+			path = MapElements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +157,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC4861B827D0872B0076D4E4 /* Fight.swift in Sources */,
+				EC4861AF27D081D40076D4E4 /* Monster.swift in Sources */,
+				EC4861A727D080220076D4E4 /* Map.swift in Sources */,
 				EC4861A027D07FDE0076D4E4 /* main.swift in Sources */,
+				EC4861B127D082860076D4E4 /* GameCharacter.swift in Sources */,
+				EC4861B327D085970076D4E4 /* Hero.swift in Sources */,
+				EC4861AD27D080870076D4E4 /* Location.swift in Sources */,
+				EC4861AB27D080750076D4E4 /* Road.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

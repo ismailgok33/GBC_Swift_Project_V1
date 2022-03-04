@@ -13,7 +13,7 @@ class Monster: GameCharacter, CustomStringConvertible {
     
     override init(name: String, health: Int, damage: Int) {
         self.attackPower = damage
-        self.description = ""
+        self.description = name.uppercased()
         super.init(name: name, health: health, damage: damage)
     }
     

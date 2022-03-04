@@ -15,7 +15,7 @@ class Map: CustomStringConvertible {
     init(locations: [Location], roads: [Road]) {
         self.locations = locations
         self.roads = roads
-        description = ""
+        description = "locations = \(locations) - roads = \(roads)"
     }   
     
 }

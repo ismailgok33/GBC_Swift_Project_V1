@@ -17,12 +17,12 @@ class Road: CustomStringConvertible {
         self.startingLocation = startingLocation
         self.endingLocation = endingLocation
         self.roadType = roadType
-        self.description = ""
+        self.description = "startingLocation = \(startingLocation) - endingLocation = \(endingLocation) - roadType = \(roadType.rawValue)"
     }
 }
 
-enum RoadType {
-    case paved
-    case swampy
-    case mountain
+enum RoadType: Int {
+    case paved = 0
+    case swampy = 1
+    case mountain = 2
 }

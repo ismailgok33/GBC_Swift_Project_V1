@@ -12,10 +12,13 @@ class Location: CustomStringConvertible {
     let monster: Monster
     var description: String
     var isAstridHere: Bool = false
+    var isHeroHere: Bool = false
+    let level: Int
     
-    init(name: String, monster: Monster) {
+    init(name: String, monster: Monster, level: Int) {
         self.name = name
         self.monster = monster
-        description = ""
+        self.level = level
+        description = name.uppercased()
     }
 }

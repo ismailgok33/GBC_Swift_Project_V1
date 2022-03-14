@@ -9,20 +9,20 @@ import Foundation
 
 class GameCharacter {
     let name: String
-    var health: Int
-    let damage: Int
+    var health: Double
+    let damage: Double
     
-    init(name: String, health: Int, damage: Int) {
+    init(name: String, health: Double, damage: Double) {
         self.name = name
         self.health = health
         self.damage = damage
     }
     
-    func takeDamage(amount: Int) {
+    func takeDamage(amount: Double) {
         health -= amount
     }
     
-    func attack() -> Int {
+    func attack() -> Double {
         return damage
     }
 }

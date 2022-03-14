@@ -8,10 +8,10 @@
 import Foundation
 
 class Hero: GameCharacter, CustomStringConvertible {
-    let weaponStrength: Int
+    let weaponStrength: Double
     var description: String
     
-    override init(name: String, health: Int, damage: Int) {
+    override init(name: String, health: Double, damage: Double) {
         self.weaponStrength = damage
         self.description = ""
         super.init(name: name, health: health, damage: damage)

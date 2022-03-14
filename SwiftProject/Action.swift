@@ -1,4 +1,4 @@
-enum Action{
+enum Action {
     case ENEMY_IS_ATTAKING
     case HERO_IS_ATTAKING
     case HERO_IS_SNEAKING

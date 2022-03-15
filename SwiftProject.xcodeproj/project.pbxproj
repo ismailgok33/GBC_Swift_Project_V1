@@ -14,9 +14,9 @@
 		EC4861AF27D081D40076D4E4 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4861AE27D081D40076D4E4 /* Monster.swift */; };
 		EC4861B127D082860076D4E4 /* GameCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4861B027D082860076D4E4 /* GameCharacter.swift */; };
 		EC4861B327D085970076D4E4 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4861B227D085970076D4E4 /* Hero.swift */; };
-		ECDEE24527DF1B19003A497B /* Fight.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDEE24427DF1B19003A497B /* Fight.swift */; };
 		ECDEE24727DF1B89003A497B /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDEE24627DF1B89003A497B /* Action.swift */; };
 		ECDEE24927DF1BDB003A497B /* GameCharacterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDEE24827DF1BDB003A497B /* GameCharacterType.swift */; };
+		ECDEE24C27E03652003A497B /* Fight.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDEE24B27E03652003A497B /* Fight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,9 +40,9 @@
 		EC4861AE27D081D40076D4E4 /* Monster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 		EC4861B027D082860076D4E4 /* GameCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCharacter.swift; sourceTree = "<group>"; };
 		EC4861B227D085970076D4E4 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
-		ECDEE24427DF1B19003A497B /* Fight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fight.swift; sourceTree = "<group>"; };
 		ECDEE24627DF1B89003A497B /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		ECDEE24827DF1BDB003A497B /* GameCharacterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCharacterType.swift; sourceTree = "<group>"; };
+		ECDEE24B27E03652003A497B /* Fight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +78,7 @@
 				EC48619F27D07FDE0076D4E4 /* main.swift */,
 				EC4861B627D086E40076D4E4 /* MapElements */,
 				EC4861B527D086C70076D4E4 /* GameCharacters */,
-				ECDEE24427DF1B19003A497B /* Fight.swift */,
-				ECDEE24627DF1B89003A497B /* Action.swift */,
-				ECDEE24827DF1BDB003A497B /* GameCharacterType.swift */,
+				ECDEE24A27E035D2003A497B /* Fight */,
 			);
 			path = SwiftProject;
 			sourceTree = "<group>";
@@ -88,8 +86,9 @@
 		EC4861B527D086C70076D4E4 /* GameCharacters */ = {
 			isa = PBXGroup;
 			children = (
-				EC4861AE27D081D40076D4E4 /* Monster.swift */,
 				EC4861B027D082860076D4E4 /* GameCharacter.swift */,
+				ECDEE24827DF1BDB003A497B /* GameCharacterType.swift */,
+				EC4861AE27D081D40076D4E4 /* Monster.swift */,
 				EC4861B227D085970076D4E4 /* Hero.swift */,
 			);
 			path = GameCharacters;
@@ -103,6 +102,15 @@
 				EC35E1D727DE4F99005AF018 /* Map.swift */,
 			);
 			path = MapElements;
+			sourceTree = "<group>";
+		};
+		ECDEE24A27E035D2003A497B /* Fight */ = {
+			isa = PBXGroup;
+			children = (
+				ECDEE24B27E03652003A497B /* Fight.swift */,
+				ECDEE24627DF1B89003A497B /* Action.swift */,
+			);
+			path = Fight;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECDEE24C27E03652003A497B /* Fight.swift in Sources */,
 				ECDEE24927DF1BDB003A497B /* GameCharacterType.swift in Sources */,
 				EC35E1D827DE4F99005AF018 /* Map.swift in Sources */,
 				EC4861AF27D081D40076D4E4 /* Monster.swift in Sources */,
@@ -170,7 +179,6 @@
 				EC4861A027D07FDE0076D4E4 /* main.swift in Sources */,
 				EC4861B127D082860076D4E4 /* GameCharacter.swift in Sources */,
 				EC4861B327D085970076D4E4 /* Hero.swift in Sources */,
-				ECDEE24527DF1B19003A497B /* Fight.swift in Sources */,
 				EC4861AD27D080870076D4E4 /* Location.swift in Sources */,
 				EC4861AB27D080750076D4E4 /* Road.swift in Sources */,
 			);

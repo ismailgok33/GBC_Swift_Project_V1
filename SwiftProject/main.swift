@@ -39,6 +39,8 @@ while true {
             else {
                 print("Astrid is not on the map.")
             }
+            
+            print("------------------------------")
         }
         else if startInput == "2" {
             // Rescue Astrid
@@ -59,26 +61,31 @@ while true {
             let path = map.generatePath(startingLocation: heroLocation, endingLocation: astridLocation)
             print("Path found. The easiest path to Astrid is: \(path)")
             
+            print("------------------------------")
+            
             // TODO:  Call Fight function here
-            var fightResult = false
-            var hero = Hero(name: "Hugie", health: 100.0, damage: 30.0)
+            var winner: GameCharacter?
+            let hero = Hero("Hugie", 100, .HERO, 20.0)
+            let maxHeroHp = hero.maxHealthPoint
             for node in path {
-                
+
                 print("ARRIVED AT \(node).")
                 print("\(node.monster) IS WAITING TO FIGHT!")
                 print("FIGHT BEGINS")
                 
-                let fight = Fight(&hero, node.monster)
-                fightResult = fight.fightBegin()
+//                let fight = Fight(&hero, node.monster)
+                let fight = Fight(hero, node.monster)
+                fight.maxHeroHP = maxHeroHp
+                winner = fight.fightBegin()
                 
-                if !fightResult {
+                if winner! === node.monster {
                     print("GAME OVER!")
                     isRescueCompleted = false
                     break
                 }
             }
             
-            if fightResult {
+            if winner! === hero {
                 print("You rescued Astrid! Congratulations!")
                 isRescueCompleted = true
             }
@@ -135,11 +142,11 @@ func searchForAstrid(locations: [Location]) -> Location? {
 }
 
 func initLocations() -> [Location] {
-    let location1 = Location(name: "Ithaca", monster: .init(name: "Monster1", health: 10, damage: 3))
-    let location2 = Location(name: "Sparta", monster: .init(name: "Monster2", health: 15, damage: 5))
-    let location3 = Location(name: "Mycanae", monster: .init(name: "Monster3", health: 20, damage: 1))
-    let location4 = Location(name: "Argos", monster: .init(name: "Monster4", health: 5, damage: 5))
-    let location5 = Location(name: "Athens", monster: .init(name: "Monster5", health: 50, damage: 10))
+    let location1 = Location(name: "Ithaca", monster: .init("Monster1", 10, .MONSTER, 10))
+    let location2 = Location(name: "Sparta", monster: .init("Monster2", 20, .MONSTER, 15))
+    let location3 = Location(name: "Mycanae", monster: .init("Monster3", 30, .MONSTER, 20))
+    let location4 = Location(name: "Argos", monster: .init("Monster4", 40, .MONSTER, 25))
+    let location5 = Location(name: "Athens", monster: .init("Monster5", 50, .MONSTER, 30))
     
     return [location1, location2, location3, location4, location5]
 }

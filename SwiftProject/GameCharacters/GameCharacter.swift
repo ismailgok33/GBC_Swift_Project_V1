@@ -7,22 +7,31 @@
 
 import Foundation
 
-class GameCharacter {
-    let name: String
-    var health: Double
-    let damage: Double
+class GameCharacter: CustomStringConvertible {
+    let name:String
+    var maxHealthPoint:Int
+    let type: GameCharacterType
     
-    init(name: String, health: Double, damage: Double) {
+    init(_ name:String, _ maxHealthPoint:Int, _ type:GameCharacterType) {
         self.name = name
-        self.health = health
-        self.damage = damage
+        self.maxHealthPoint = maxHealthPoint
+        self.type = type
     }
     
-    func takeDamage(amount: Double) {
-        health -= amount
+    func takeDamage(dmPoint:Int) {
+        self.maxHealthPoint = self.maxHealthPoint - dmPoint
     }
     
-    func attack() -> Double {
-        return damage
+    func attack() -> Int {
+        return 0;
     }
 }
+
+extension GameCharacter {
+    var description: String {
+        get {
+            return "The name of the \(type) is \(name) and max health point of \(name) is \(maxHealthPoint)."
+        }
+    }
+}
+

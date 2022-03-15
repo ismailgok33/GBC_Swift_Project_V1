@@ -7,17 +7,25 @@
 
 import Foundation
 
-class Hero: GameCharacter, CustomStringConvertible {
-    let weaponStrength: Double
-    var description: String
+class Hero: GameCharacter {
+    let weaponStrength: Float
     
-    override init(name: String, health: Double, damage: Double) {
-        self.weaponStrength = damage
-        self.description = ""
-        super.init(name: name, health: health, damage: damage)
+    init(_ name:String, _ maxHealthPoint:Int, _ type:GameCharacterType, _ weaponStrength:Float){
+        self.weaponStrength = weaponStrength
+        super.init(name, maxHealthPoint, type)
     }
     
     func sneak() {
-        // pass obstacles
+        print("\(name) successfully sneak past the obstacles.")
+    }
+    
+    override func attack() -> Int {
+        if(Int.random(in: 1...10) <= 3) {
+            print("CRITICAL HIT!")
+            return Int(weaponStrength * 1.2)
+        }
+        else{
+            return Int(weaponStrength)
+        }
     }
 }

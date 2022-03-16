@@ -5,8 +5,6 @@
 //  Created by İsmail on 3.03.2022.
 //
 
-import Foundation
-
 class Hero: GameCharacter {
     let weaponStrength: Float
     

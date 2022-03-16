@@ -8,15 +8,12 @@
 import Foundation
 
 // Initialize locations, roads and map
-let locations = initLocations()
-let roads = initRoads(locations: locations)
-let map = Map(roads: roads)
+var locations = initLocations()
+var roads = initRoads(locations: locations)
+var map = Map(roads: roads)
 
-// Set Astrid's and Hero's location (set this randomly)
-locations[locations.count - 1].isAstridHere = true
-locations[0].isHeroHere = true
-let heroLocation = locations.first!
-let astridLocation = locations.last!
+// Set Astrid's and Hero's locations
+var (heroLocation, astridLocation) = setHeroAndAstridLocations(heroIndex: 0, astridIndex: locations.count - 1)
 
 // global variables for state management
 var isSearchCompleted = false
@@ -68,19 +65,22 @@ while true {
             let hero = Hero("Hugie", 100, .HERO, 20.0)
             let maxHeroHp = hero.maxHealthPoint
             for node in path {
-
-                print("ARRIVED AT \(node).")
-                print("\(node.monster) IS WAITING TO FIGHT!")
-                print("FIGHT BEGINS")
-                
-//                let fight = Fight(&hero, node.monster)
-                let fight = Fight(hero, node.monster)
+                let currentLocation = node
+                print("ARRIVED AT \(currentLocation).")
+                let fight = Fight(hero, currentLocation.monster)
                 fight.maxHeroHP = maxHeroHp
                 winner = fight.fightBegin()
                 
-                if winner! === node.monster {
+                if winner! === currentLocation.monster {
                     print("GAME OVER!")
                     isRescueCompleted = false
+                    
+                    // Reset the reference types
+                    locations = initLocations()
+                    roads = initRoads(locations: locations)
+                    map = Map(roads: roads)
+                    (heroLocation, astridLocation) = setHeroAndAstridLocations(heroIndex: 0, astridIndex: locations.count - 1)
+                    
                     break
                 }
             }
@@ -125,7 +125,7 @@ func askForInput(isSearchCompleted: Bool, isRescueCompleted: Bool) -> String? {
     return readLine()
 }
 
-// Searches for Astrid
+// Search for Astrid
 func searchForAstrid(locations: [Location]) -> Location? {
     var location: Location?
     for loc in locations {
@@ -141,16 +141,18 @@ func searchForAstrid(locations: [Location]) -> Location? {
     return location
 }
 
+// Initialize the locations manually
 func initLocations() -> [Location] {
-    let location1 = Location(name: "Ithaca", monster: .init("Monster1", 10, .MONSTER, 10))
-    let location2 = Location(name: "Sparta", monster: .init("Monster2", 20, .MONSTER, 15))
-    let location3 = Location(name: "Mycanae", monster: .init("Monster3", 30, .MONSTER, 20))
-    let location4 = Location(name: "Argos", monster: .init("Monster4", 40, .MONSTER, 25))
-    let location5 = Location(name: "Athens", monster: .init("Monster5", 50, .MONSTER, 30))
+    let location1 = Location(name: "Ithaca", monster: .init("The_Rainbow_Mutant", 20, .MONSTER, 10))
+    let location2 = Location(name: "Sparta", monster: .init("The_Crying_Doll", 25, .MONSTER, 12))
+    let location3 = Location(name: "Mycanae", monster: .init("The_Icy_Snake", 30, .MONSTER, 14))
+    let location4 = Location(name: "Argos", monster: .init("The_Night_Worm", 33, .MONSTER, 16))
+    let location5 = Location(name: "Athens", monster: .init("The_Nemean_Lion", 35, .MONSTER, 18))
     
     return [location1, location2, location3, location4, location5]
 }
 
+// Initialize the roads manually
 func initRoads(locations: [Location]) -> [Road] {
     let road1 = Road(startingLocation: locations[0], endingLocation: locations[1], roadType: .mountain)
     let road2 = Road(startingLocation: locations[1], endingLocation: locations[2], roadType: .swampy)
@@ -159,5 +161,13 @@ func initRoads(locations: [Location]) -> [Road] {
     let road5 = Road(startingLocation: locations[3], endingLocation: locations[4], roadType: .mountain)
     
     return [road1, road2, road3, road4, road5]
+}
+
+// Set the locations of Hero and Astrid manually
+func setHeroAndAstridLocations(heroIndex: Int, astridIndex: Int) -> (Location, Location) {
+    locations[heroIndex].isHeroHere = true
+    locations[astridIndex].isAstridHere = true
+    
+    return (locations[heroIndex], locations[astridIndex])
 }
 

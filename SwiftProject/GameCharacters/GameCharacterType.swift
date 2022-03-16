@@ -1,8 +1,8 @@
-enum GameCharacterType{
+enum GameCharacterType {
     case HERO
     case MONSTER
     
-    var gameCharacterString: String{
+    var gameCharacterString: String {
         switch self {
         case .HERO:
             return "HERO"

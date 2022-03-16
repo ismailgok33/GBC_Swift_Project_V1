@@ -10,7 +10,7 @@ import Foundation
 class Map {
     var adjacencyList:[Location:[(destination:Location, price:RoadType)]] = [:]
     
-    init(roads: [Road]) {        
+    init(roads: [Road]) {
         for road in roads {
             let srcValue = road.startingLocation // key
             let tupleToAdd = (road.endingLocation, road.roadType) // value

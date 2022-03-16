@@ -11,11 +11,13 @@ class GameCharacter: CustomStringConvertible {
     let name:String
     var maxHealthPoint:Int
     let type: GameCharacterType
+    let description: String
     
     init(_ name:String, _ maxHealthPoint:Int, _ type:GameCharacterType) {
         self.name = name
         self.maxHealthPoint = maxHealthPoint
         self.type = type
+        description = name.uppercased()
     }
     
     func takeDamage(dmPoint:Int) {
@@ -27,11 +29,4 @@ class GameCharacter: CustomStringConvertible {
     }
 }
 
-extension GameCharacter {
-    var description: String {
-        get {
-            return "The name of the \(type) is \(name) and max health point of \(name) is \(maxHealthPoint)."
-        }
-    }
-}
 

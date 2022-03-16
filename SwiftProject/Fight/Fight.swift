@@ -18,8 +18,9 @@ class Fight: CustomStringConvertible {
         var attackerName:String
         var input:String
         
-        print("\(monster.name) IS WAITING TO FIGHT!")
+        print("\(monster.name.uppercased()) IS WAITING TO FIGHT!")
         print("FIGHT BEGINS!")
+        print("")
         
         repeat {
             if(turn % 2 == 0){
@@ -35,10 +36,10 @@ class Fight: CustomStringConvertible {
             print("Current Turn is: \(attackerName)")
             print("\(getHealthStat(hero))")
             print("\(getHealthStat(monster))")
+            print("")
             
             if(attackerType == .HERO){
                 print("""
-                
                     \(hero.name), what move will you make?
                     1. Attack
                     2. Sneak
@@ -87,8 +88,10 @@ class Fight: CustomStringConvertible {
     
     private func applyDamage(_ from:GameCharacter, _ to:GameCharacter) {
         if(type(of: from) == Hero.self) {
-            monster.takeDamage(dmPoint: hero.attack())
-            print("\(hero.name) attacks: \(hero.attack()) damage!")
+            let attackPoint = hero.attack()
+            print("\(hero.name) attacks: \(attackPoint) damage!")
+            monster.takeDamage(dmPoint: attackPoint)
+            
         }
         
         if(type(of: from) == Monster.self){
@@ -139,6 +142,7 @@ class Fight: CustomStringConvertible {
             \(getHealthStat(monster))
             
             Winner is: \(winner.name)
+        
         """)
         
         return winner
@@ -155,10 +159,8 @@ class Fight: CustomStringConvertible {
     }
 }
 
-extension Fight{
-    var description: String{
-        get{
-            return ""
-        }
+extension Fight {
+    var description: String {
+        return "Fight between \(hero.name) vs \(monster.name)"
     }
 }
